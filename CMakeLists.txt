@@ -33,7 +33,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 
 
 
-# Resources:
+# Resources:g
 set(qml_resource_files
     maps/cloth-heightmap.png
     maps/numbers-normal.png
@@ -62,6 +62,8 @@ set(qml_resource_files
     meshes/d12.mesh
     meshes/d20.mesh
     meshes/d100.mesh
+
+    resources/menuIcon.svg
 )
 
 qt6_add_qml_module(${PROJECT_NAME}
@@ -75,7 +77,7 @@ qt6_add_qml_module(${PROJECT_NAME}
     dicemodel.cpp
   VERSION 1.0
   QML_FILES DiceInterface.qml
-  QML_FILES RegularDice.qml
+  QML_FILES RegularDice.qml SideMenu.qml
 )
 
 qt_add_resources(${PROJECT_NAME} "qml"

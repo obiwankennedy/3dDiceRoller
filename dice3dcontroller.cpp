@@ -30,6 +30,14 @@ Dice3DController::Dice3DController(QObject* parent)
     m_colors[4] = Qt::black;
     m_colors[5] = Qt::black;
     m_colors[6] = Qt::black;
+
+    connect(this, &Dice3DController::fourColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::sixColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::eightColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::tenColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::twelveColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::twentyColorChanged, this, &Dice3DController::colorChanged);
+    connect(this, &Dice3DController::oneHundredColorChanged, this, &Dice3DController::colorChanged);
 }
 
 DiceModel* Dice3DController::model() const
@@ -102,7 +110,7 @@ void Dice3DController::setEightColor(const QColor& newEightColor)
 {
     if (eightColor() == newEightColor)
         return;
-    m_colors[static_cast<int>(DiceModel::DiceType::TENSIDE)] = newEightColor;
+    m_colors[static_cast<int>(DiceModel::DiceType::OCTOSIDE)] = newEightColor;
     emit eightColorChanged();
 }
 

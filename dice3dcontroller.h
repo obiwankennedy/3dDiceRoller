@@ -77,6 +77,7 @@ signals:
     void twelveColorChanged();
     void twentyColorChanged();
     void oneHundredColorChanged();
+    void colorChanged();
 
 private:
     std::unique_ptr<DiceModel> m_model;
